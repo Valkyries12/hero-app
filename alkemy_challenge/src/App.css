@@ -1,0 +1,30 @@
+.error {
+    color: red;
+}
+
+.heroes-team-container {
+    border: 2px solid blue;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-details {
+    border: 1px solid red;
+    max-width: 1200px;
+    max-height: 500px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.hero-details__image {
+    border: 3px solid blue;
+    display: flex;
+}
+
+.hero-details__image img {
+    max-width: 100%;
+}
+
+.hero-details__stats {
+    border: 1px solid green;
+}
