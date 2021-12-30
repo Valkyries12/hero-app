@@ -1,6 +1,10 @@
 import React from "react";
 
-const PowerStats = () => {
+const PowerStats = ({ powerStats }) => {
+  const makeAverage = (stats) => {
+    //hacer generico como para que se utilice tanto con powerstats como con peso y altura. Que devuelva un objeto dependiendo la cantidad de cosas enviadas?
+  }
+
   return (
     <div>
       <p className="HeroesTeam__PowerStats-title">Your Team</p>

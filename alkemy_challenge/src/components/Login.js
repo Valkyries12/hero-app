@@ -18,18 +18,6 @@ const initialValues = {
   password: "",
 };
 
-// const onSubmit = async (values) => {
-//   // aca yhay que usar el fetch a la api de autenticacion
-//   // usar useEffect?
-
-//   console.log("form data ", values);
-//   const token = await getLoginAccess(values.email, values.password);
-//   if (!token.includes("Error")) {
-//     window.localStorage.setItem("token", token);
-//   }
-//   console.log("imprimiendo token ",token)
-
-// };
 
 const validate = (values) => {
   let errors = {};
@@ -54,7 +42,6 @@ const Login = ({ setIsLogged }) => {
     initialValues,
     validate,
     onSubmit: async () => {
-      // console.log("form data ", formik.values);
       const token = await getLoginAccess(formik.values.email, formik.values.password);
       if (!token.includes("Error")) {
         window.localStorage.setItem("token", token);
@@ -62,11 +49,9 @@ const Login = ({ setIsLogged }) => {
         setErrorMsj(null);
       }
       setErrorMsj(token);
-      // console.log("imprimiendo token ", token);
     },
   });
 
-  // console.log("form values ", formik.values)
 
   return (
     <Container>

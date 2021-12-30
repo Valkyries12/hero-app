@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import CardTeamHero from "./CardTeamHero";
 import TeamInfo from "./TeamInfo";
 import PowerStats from "./PowerStats";
 
-const HeroesTeam = ({
-  //selectedGoodHeroes,
-  //setSelectedGoodHeroes,
-  //selectedBadHeroes,
-  //setSelectedBadHeroes,
-  selectedHeroes,
-  setSelectedHeroes,
-}) => {
-  // const RenderGoodHeroes = () => {};
+const HeroesTeam = ({ selectedHeroes, setSelectedHeroes }) => {
+  const [powerStats, setPowerStats] = useState([]);
 
-  // const RenderBadHeroes = () => {};
+  useEffect(() => {
+    selectedHeroes.map((hero) => {
+      if (powerStats.length < 3) {
+        setPowerStats((prevState) => [...powerStats, hero.powerstats]);
+      }
+    });
+  }, [selectedHeroes]);
 
   return (
     <Container className="heroes-team-container">
@@ -25,20 +24,20 @@ const HeroesTeam = ({
               <TeamInfo />
             </Col>
             <Col>
-              <PowerStats />
+              <PowerStats powerStats={powerStats}/>
             </Col>
           </Row>
           <Row>
             {selectedHeroes.map((hero) => {
-                return (
-                  <Col key={hero.id}>
-                    <CardTeamHero
-                      hero={hero}
-                      setSelectedHeroes={setSelectedHeroes}
-                      selectedHeroes={selectedHeroes}
-                    />
-                  </Col>
-                );
+              return (
+                <Col key={hero.id}>
+                  <CardTeamHero
+                    hero={hero}
+                    setSelectedHeroes={setSelectedHeroes}
+                    selectedHeroes={selectedHeroes}
+                  />
+                </Col>
+              );
             })}
           </Row>
         </>

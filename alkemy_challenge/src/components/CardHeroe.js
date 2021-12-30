@@ -4,22 +4,10 @@ import { Card, CardBody, CardLink, CardText, CardTitle } from "reactstrap";
 
 const CardHeroe = ({
   heroe,
-  setSelectedGoodHeroes,
-  selectedGoodHeroes,
-  setSelectedBadHeroes,
-  selectedBadHeroes,
   selectedHeroes,
   setSelectedHeroes
 }) => {
   const handleAddHero = (heroe) => {
-    // const alignment = heroe.biography.alignment;
-    // console.log("good heroes nº ", selectedGoodHeroes.length);
-    // if (alignment === "good" && selectedGoodHeroes.length <= 2) {
-    //   setSelectedGoodHeroes((prevState) => [...selectedGoodHeroes, heroe]);
-    // }
-    // if (alignment === "bad" && selectedBadHeroes.length <= 2) {
-    //   setSelectedBadHeroes((prevState) => [...selectedBadHeroes, heroe]);
-    // }
     if(selectedHeroes.length < 6) {
       const alignmentCounter = countAlignment(selectedHeroes);
       console.log(alignmentCounter)
