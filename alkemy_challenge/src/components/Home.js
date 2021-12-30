@@ -6,21 +6,29 @@ import HeroesContainer from "./HeroesContainer";
 
 const Home = () => {
   const [dataHeroes, setDataHeroes] = useState([]);
-  const [selectedGoodHeroes, setSelectedGoodHeroes] = useState([]);
-  const [selectedBadHeroes, setSelectedBadHeroes] = useState([]);
-  
-  
+  // const [selectedGoodHeroes, setSelectedGoodHeroes] = useState([]);
+  // const [selectedBadHeroes, setSelectedBadHeroes] = useState([]);
+  const [selectedHeroes, setSelectedHeroes] = useState([]);
 
   return (
     <div>
-      <HeroesTeam selectedGoodHeroes={selectedGoodHeroes} selectedBadHeroes={selectedBadHeroes} />
+      <HeroesTeam
+        // selectedGoodHeroes={selectedGoodHeroes}
+        // setSelectedGoodHeroes={setSelectedGoodHeroes}
+        // selectedBadHeroes={selectedBadHeroes}
+        // setSelectedBadHeroes={setSelectedBadHeroes}
+        selectedHeroes={selectedHeroes}
+        setSelectedHeroes={setSelectedHeroes}
+      />
       <Search setDataHeroes={setDataHeroes} />
       <HeroesContainer
         dataHeroes={dataHeroes}
-        setSelectedGoodHeroes={setSelectedGoodHeroes}
-        selectedGoodHeroes={selectedGoodHeroes}
-        setSelectedBadHeroes={setSelectedBadHeroes}
-        selectedBadHeroes={selectedBadHeroes}
+        selectedHeroes={selectedHeroes}
+        setSelectedHeroes={setSelectedHeroes}
+        // setSelectedGoodHeroes={setSelectedGoodHeroes}
+        // selectedGoodHeroes={selectedGoodHeroes}
+        // setSelectedBadHeroes={setSelectedBadHeroes}
+        // selectedBadHeroes={selectedBadHeroes}
       />
     </div>
   );

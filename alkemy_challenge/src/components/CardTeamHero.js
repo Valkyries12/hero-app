@@ -2,7 +2,14 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { Card, CardBody, CardLink, CardText, CardTitle } from "reactstrap";
 
-const CardTeamHero = ({ hero }) => {
+const CardTeamHero = ({ hero, setSelectedHeroes, selectedHeroes }) => {
+  const handleRemoveHero = (hero) => {
+    const filterHeroById = selectedHeroes.filter(heroe =>
+      heroe.id !== hero.id
+    )
+    setSelectedHeroes(filterHeroById);
+  }
+
   return (
     <div className="card-team-hero">
       <Card>
@@ -20,7 +27,7 @@ const CardTeamHero = ({ hero }) => {
 
             }
           </CardText>
-          <CardLink href="#">Eliminar Heroe</CardLink>
+          <CardLink onClick={() => handleRemoveHero(hero)} href="#">Eliminar Heroe</CardLink>
         </CardBody>
       </Card>
     </div>

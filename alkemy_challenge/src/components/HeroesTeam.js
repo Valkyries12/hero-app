@@ -4,10 +4,21 @@ import CardTeamHero from "./CardTeamHero";
 import TeamInfo from "./TeamInfo";
 import PowerStats from "./PowerStats";
 
-const HeroesTeam = ({ selectedGoodHeroes, selectedBadHeroes }) => {
+const HeroesTeam = ({
+  //selectedGoodHeroes,
+  //setSelectedGoodHeroes,
+  //selectedBadHeroes,
+  //setSelectedBadHeroes,
+  selectedHeroes,
+  setSelectedHeroes,
+}) => {
+  // const RenderGoodHeroes = () => {};
+
+  // const RenderBadHeroes = () => {};
+
   return (
     <Container className="heroes-team-container">
-      {selectedGoodHeroes.length > 0 || selectedBadHeroes.length > 0 ? (
+      {selectedHeroes.length > 0 ? (
         <>
           <Row>
             <Col>
@@ -18,23 +29,16 @@ const HeroesTeam = ({ selectedGoodHeroes, selectedBadHeroes }) => {
             </Col>
           </Row>
           <Row>
-            {selectedGoodHeroes.map((hero) => {
-              console.log("dentro de heroe team ", hero);
-              return (
-                <Col key={hero.id}>
-                  <CardTeamHero hero={hero} />
-                </Col>
-              );
-            })}
-          </Row>
-          <Row>
-            {selectedBadHeroes.map((hero) => {
-              console.log("dentro de heroe team ", hero);
-              return (
-                <Col key={hero.id}>
-                  <CardTeamHero hero={hero} />
-                </Col>
-              );
+            {selectedHeroes.map((hero) => {
+                return (
+                  <Col key={hero.id}>
+                    <CardTeamHero
+                      hero={hero}
+                      setSelectedHeroes={setSelectedHeroes}
+                      selectedHeroes={selectedHeroes}
+                    />
+                  </Col>
+                );
             })}
           </Row>
         </>
