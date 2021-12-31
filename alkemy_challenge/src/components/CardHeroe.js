@@ -10,7 +10,7 @@ const CardHeroe = ({
   const handleAddHero = (heroe) => {
     if(selectedHeroes.length < 6) {
       const alignmentCounter = countAlignment(selectedHeroes);
-      console.log(alignmentCounter)
+      // console.log(alignmentCounter)
       if(heroe.biography.alignment === "good" && alignmentCounter.good < 3) {
         setSelectedHeroes(prevState => [...selectedHeroes, heroe]);
       }

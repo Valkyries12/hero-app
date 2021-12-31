@@ -1,31 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { makeAverageStats, sumStats } from "../utils";
 
-const PowerStats = ({ powerStats }) => {
-  const makeAverage = (stats) => {
-    //hacer generico como para que se utilice tanto con powerstats como con peso y altura. Que devuelva un objeto dependiendo la cantidad de cosas enviadas?
-  }
+const PowerStats = ({ /*powerStats,*/ selectedHeroes }) => {
+  const [avgPowerstats, setAvgPowerstats] = useState(null);
+  
+
+  useEffect(() => {
+   
+    if (selectedHeroes.length <= 3) {
+      const powerstatsArr = []
+      selectedHeroes.map(hero => {
+        powerstatsArr.push(hero.powerstats)
+      })
+      console.log("array powerstats es: ", powerstatsArr )
+      setAvgPowerstats(makeAverageStats(selectedHeroes, sumStats(powerstatsArr)))
+    }
+  }, [selectedHeroes]);
+
 
   return (
     <div>
       <p className="HeroesTeam__PowerStats-title">Your Team</p>
-      <p className="HeroesTeam__PowerStats-detail">
-        Combat: 170%
-      </p>
-      <p className="HeroesTeam__PowerStats-detail">
-        Inteligence: 162%
-      </p>
-      <p className="HeroesTeam__PowerStats-detail">
-        Power: 92%
-      </p>
-      <p className="HeroesTeam__PowerStats-detail">
-        Durability: 87%
-      </p>
-      <p className="HeroesTeam__PowerStats-detail">
-        Speed: 82%
-      </p>
-      <p className="HeroesTeam__PowerStats-detail">
-        Strength: 81%
-      </p>
+      <p className="HeroesTeam__PowerStats-detail">Combat: {avgPowerstats.combat}%</p>
+      <p className="HeroesTeam__PowerStats-detail">Intelligence: {avgPowerstats.intelligence}%</p>
+      <p className="HeroesTeam__PowerStats-detail">Power: {avgPowerstats.power}%</p>
+      <p className="HeroesTeam__PowerStats-detail">Durability: {avgPowerstats.durability}%</p>
+      <p className="HeroesTeam__PowerStats-detail">Speed: {avgPowerstats.speed}%</p>
+      <p className="HeroesTeam__PowerStats-detail">Strength: {avgPowerstats.strength}%</p>
     </div>
   );
 };

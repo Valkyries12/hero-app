@@ -22,7 +22,6 @@ const Search = ({ setDataHeroes }) => {
         e.preventDefault();
         setErrorMessage("");
         const heroes = await getHeroeInfo(heroeName);
-        console.log(heroes)
         if(heroes.data.error) {
             setErrorMessage(heroes.data.error);
         }

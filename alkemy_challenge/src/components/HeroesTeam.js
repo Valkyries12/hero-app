@@ -5,15 +5,15 @@ import TeamInfo from "./TeamInfo";
 import PowerStats from "./PowerStats";
 
 const HeroesTeam = ({ selectedHeroes, setSelectedHeroes }) => {
-  const [powerStats, setPowerStats] = useState([]);
+  // const [powerStats, setPowerStats] = useState([]);
 
-  useEffect(() => {
-    selectedHeroes.map((hero) => {
-      if (powerStats.length < 3) {
-        setPowerStats((prevState) => [...powerStats, hero.powerstats]);
-      }
-    });
-  }, [selectedHeroes]);
+  // useEffect(() => {
+  //   selectedHeroes.map((hero) => {
+  //     if (powerStats.length < 3) {
+  //       setPowerStats((prevState) => [...powerStats, hero.powerstats]);
+  //     }
+  //   });
+  // }, [selectedHeroes]);
 
   return (
     <Container className="heroes-team-container">
@@ -24,7 +24,8 @@ const HeroesTeam = ({ selectedHeroes, setSelectedHeroes }) => {
               <TeamInfo />
             </Col>
             <Col>
-              <PowerStats powerStats={powerStats}/>
+              {/* <PowerStats powerStats={powerStats}/> */}
+              <PowerStats selectedHeroes={selectedHeroes}/>
             </Col>
           </Row>
           <Row>
