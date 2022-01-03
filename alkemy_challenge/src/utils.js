@@ -13,7 +13,9 @@ const sumStats = (stats) => {
 
   stats.map((stat) => {
     for (let key in stat) {
-      resultObj[key] = parseInt(resultObj[key]) + parseInt(stat[key]);
+      if(!isNaN(stat[key])) {
+        resultObj[key] =  parseInt(resultObj[key]) + parseInt(stat[key]);
+      }
     }
   });
   return resultObj;

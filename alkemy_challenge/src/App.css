@@ -3,10 +3,26 @@
 }
 
 .heroes-team-container {
-    border: 2px solid blue;
-    text-align: center;
-    margin-bottom: 40px;
+    border: 2px solid green;
+    width: 90%;
 }
+
+.heroes-container {
+    border: 2px solid #ccc;
+}
+
+.cardbody {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.card-hero {
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
 
 .hero-details {
     border: 1px solid red;
@@ -24,6 +40,13 @@
 .hero-details__image img {
     max-width: 100%;
 }
+
+/* .powerstats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+} */
 
 .hero-details__stats {
     border: 1px solid green;

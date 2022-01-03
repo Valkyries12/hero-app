@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { makeAverageStats, sumStats } from "../utils";
 
-const PowerStats = ({ /*powerStats,*/ selectedHeroes }) => {
+const PowerStats = ({ selectedHeroes }) => {
   const [avgPowerstats, setAvgPowerstats] = useState(null);
   
 
   useEffect(() => {
    
-    if (selectedHeroes.length <= 3) {
+    if (selectedHeroes.length <= 6) {
       const powerstatsArr = []
       selectedHeroes.map(hero => {
         powerstatsArr.push(hero.powerstats)
@@ -19,6 +19,7 @@ const PowerStats = ({ /*powerStats,*/ selectedHeroes }) => {
 
 
   return (
+    avgPowerstats &&
     <div>
       <p className="HeroesTeam__PowerStats-title">Your Team</p>
       <p className="HeroesTeam__PowerStats-detail">Combat: {avgPowerstats.combat}%</p>

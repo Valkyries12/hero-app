@@ -8,8 +8,8 @@ const HeroesContainer = ({
   setSelectedHeroes,
 }) => {
   return (
-    <Container className="heroes-team-container">
-      <Row md="3">
+    <Container className="heroes-container">
+      <Row md="3" xs="1">
         {dataHeroes
           ? dataHeroes.map((heroe) => {
               return (

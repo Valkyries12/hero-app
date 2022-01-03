@@ -5,30 +5,20 @@ import TeamInfo from "./TeamInfo";
 import PowerStats from "./PowerStats";
 
 const HeroesTeam = ({ selectedHeroes, setSelectedHeroes }) => {
-  // const [powerStats, setPowerStats] = useState([]);
-
-  // useEffect(() => {
-  //   selectedHeroes.map((hero) => {
-  //     if (powerStats.length < 3) {
-  //       setPowerStats((prevState) => [...powerStats, hero.powerstats]);
-  //     }
-  //   });
-  // }, [selectedHeroes]);
-
+  
   return (
     <Container className="heroes-team-container">
       {selectedHeroes.length > 0 ? (
         <>
           <Row>
             <Col>
-              <TeamInfo />
+              <TeamInfo selectedHeroes={selectedHeroes} />
             </Col>
             <Col>
-              {/* <PowerStats powerStats={powerStats}/> */}
               <PowerStats selectedHeroes={selectedHeroes}/>
             </Col>
           </Row>
-          <Row>
+          <Row md="3" xs="2">
             {selectedHeroes.map((hero) => {
               return (
                 <Col key={hero.id}>
