@@ -1,5 +1,4 @@
 function hasToken() {
-  //   console.log(window.localStorage.getItem("token") ? true : false);
   return window.localStorage.getItem("token") ? true : false;
 }
 
