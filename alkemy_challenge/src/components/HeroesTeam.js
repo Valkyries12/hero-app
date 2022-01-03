@@ -11,10 +11,10 @@ const HeroesTeam = ({ selectedHeroes, setSelectedHeroes }) => {
       {selectedHeroes.length > 0 ? (
         <>
           <Row>
-            <Col>
+            <Col className="text-center">
               <TeamInfo selectedHeroes={selectedHeroes} />
             </Col>
-            <Col>
+            <Col className="text-center">
               <PowerStats selectedHeroes={selectedHeroes}/>
             </Col>
           </Row>
@@ -33,7 +33,7 @@ const HeroesTeam = ({ selectedHeroes, setSelectedHeroes }) => {
           </Row>
         </>
       ) : (
-        <p className="no-heroes-text">No hay heroes enlistados</p>
+        <p className="no-heroes-text text-center">No hay heroes enlistados</p>
       )}
     </Container>
   );

@@ -13,7 +13,7 @@ const HeroesContainer = ({
         {dataHeroes
           ? dataHeroes.map((heroe) => {
               return (
-                <Col key={heroe.id}>
+                <Col  key={heroe.id}>
                   <CardHeroe
                     heroe={heroe}
                     selectedHeroes={selectedHeroes}

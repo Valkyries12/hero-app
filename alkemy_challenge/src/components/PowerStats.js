@@ -12,7 +12,6 @@ const PowerStats = ({ selectedHeroes }) => {
       selectedHeroes.map(hero => {
         powerstatsArr.push(hero.powerstats)
       })
-      console.log("array powerstats es: ", powerstatsArr )
       setAvgPowerstats(makeAverageStats(selectedHeroes, sumStats(powerstatsArr)))
     }
   }, [selectedHeroes]);
@@ -21,7 +20,7 @@ const PowerStats = ({ selectedHeroes }) => {
   return (
     avgPowerstats &&
     <div>
-      <p className="HeroesTeam__PowerStats-title">Your Team</p>
+      <p className="HeroesTeam__PowerStats-title">Powerstats</p>
       <p className="HeroesTeam__PowerStats-detail">Combat: {avgPowerstats.combat}%</p>
       <p className="HeroesTeam__PowerStats-detail">Intelligence: {avgPowerstats.intelligence}%</p>
       <p className="HeroesTeam__PowerStats-detail">Power: {avgPowerstats.power}%</p>

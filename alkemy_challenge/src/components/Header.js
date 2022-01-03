@@ -1,33 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Nav, NavItem, NavLink } from "reactstrap";
-import {removeToken, hasToken } from "../utils";
+import { Nav, NavItem, NavLink, Button } from "reactstrap";
+import { removeToken, hasToken } from "../utils";
 
 const Header = ({ isLogged, setIsLogged }) => {
   const handleLogout = () => {
     removeToken();
     setIsLogged(hasToken());
-  }
+  };
 
   return (
-    <header className="p-3 mb-2 bg-dark bg-gradient text-white">
-      <h1 className="d-flex justify-content-center">superhero</h1>
+    <header className="p-3 mb-2 text-white header">
+      <h1 className="d-flex justify-content-center header__title"><span>super</span>hero</h1>
 
       <div>
         <Nav justified>
           <NavItem>
             <Link to="/">
-              Home
+              <Button color="primary">Home</Button>
             </Link>
           </NavItem>
-          { isLogged ?
-            <NavItem>
-              <Link onClick={handleLogout} to="/">Logout</Link>
-            </NavItem> :
-            <NavItem>
-              <NavLink href="#">Login</NavLink>
-            </NavItem>
-          }
+          <NavItem>
+            <Link onClick={handleLogout} to="/">
+              <Button color="primary">{isLogged ? "Logout" : "Login"}</Button>
+            </Link>
+          </NavItem>
         </Nav>
       </div>
     </header>

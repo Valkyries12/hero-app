@@ -11,7 +11,6 @@ const TeamInfo = ({ selectedHeroes }) => {
       selectedHeroes.map(hero => {
         statsArr.push(hero.appearance)
       })
-      console.log("array stats es: ", statsArr )
       setAvgStats(makeAverageStats(selectedHeroes, sumStats(statsArr)))
     }
   }, [selectedHeroes]);
@@ -19,10 +18,10 @@ const TeamInfo = ({ selectedHeroes }) => {
     <div>
       <p className="HeroesTeam__TeamInfo-title">Your Team</p>
       <p className="HeroesTeam__TeamInfo-detail">
-        Team Weight Average: {avgStats.weight[1]} kg
+        Team Weight Average: {avgStats.weight} kg
       </p>
       <p className="HeroesTeam__TeamInfo-detail">
-        Team height Average: {avgStats.height[1]} cm
+        Team height Average: {avgStats.height} cm
       </p>
     </div>
   );

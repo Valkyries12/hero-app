@@ -13,8 +13,14 @@ const sumStats = (stats) => {
 
   stats.map((stat) => {
     for (let key in stat) {
-      if(!isNaN(stat[key])) {
-        resultObj[key] =  parseInt(resultObj[key]) + parseInt(stat[key]);
+      if (key === "height" || key === "weight") {
+        const arrStat = stat[key][1].split("");
+        const result = arrStat.filter(value => value == parseInt(value)).join("");
+        resultObj[key] = parseInt(resultObj[key]) + parseInt(result)
+      } else {
+        if(!isNaN(stat[key])) {
+          resultObj[key] =  parseInt(resultObj[key]) + parseInt(stat[key]);
+        }
       }
     }
   });
@@ -27,7 +33,6 @@ const makeAverageStats = (statsArr, statsSumObj) => {
   for (let key in statsSumObj) {
     result[key] = Math.round(statsSumObj[key] / statsArr.length);
   }
-  console.log("el promedio de statsSumObj es: ", result);
   return result
 };
 

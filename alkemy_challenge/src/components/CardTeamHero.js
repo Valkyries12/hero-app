@@ -21,7 +21,7 @@ const CardTeamHero = ({ hero, setSelectedHeroes, selectedHeroes }) => {
     <div className="card-hero">
       <Card>
         <CardBody>
-          <CardTitle className="text-center" tag="h6">{hero.name}</CardTitle>
+          <CardTitle className="text-center card-heroe-name" tag="h6">{hero.name}</CardTitle>
         </CardBody>
         <img alt={hero.name} src={hero.image.url} width="100%" />
         <CardBody className="text-center">
